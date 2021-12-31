@@ -1,7 +1,13 @@
 {
   "name": "@copofe/utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/copofe/utils.git"
@@ -11,8 +17,12 @@
   "devDependencies": {
     "@copofe/eslint-config-typescript": "^0.1.2",
     "eslint": "^8.5.0",
+    "tsup": "^5.11.9",
     "typescript": "^4.5.4"
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   }
