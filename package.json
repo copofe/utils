@@ -1,0 +1,19 @@
+{
+  "name": "@copofe/utils",
+  "version": "0.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/copofe/utils.git"
+  },
+  "author": "copofe <me@shinji.me>",
+  "homepage": "https://github.com/copofe/utils#readme",
+  "devDependencies": {
+    "@copofe/eslint-config-typescript": "^0.1.2",
+    "eslint": "^8.5.0",
+    "typescript": "^4.5.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
