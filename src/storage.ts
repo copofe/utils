@@ -1,5 +1,5 @@
 export function proxyStorage(
-  keys: { [key: string]: string },
+  keys: { [key: string]: unknown },
   prefix = '',
   DB: Storage = localStorage,
 ): void {
