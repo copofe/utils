@@ -15,7 +15,7 @@
   "author": "copofe <me@shinji.me>",
   "homepage": "https://github.com/copofe/utils#readme",
   "devDependencies": {
-    "@copofe/eslint-config-typescript": "^0.1.2",
+    "@copofe/eslint-config-typescript": "^0.1.7",
     "eslint": "^8.5.0",
     "tsup": "^5.11.9",
     "typescript": "^4.5.4"

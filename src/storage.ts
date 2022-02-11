@@ -1,11 +1,5 @@
-/* eslint-disable import/prefer-default-export */
-
-interface ScopeStorageRaw {
-  [key: string]: unknown;
-}
-
-export function asyncScopeStorage(
-  keys: ScopeStorageRaw,
+export function proxyStorage(
+  keys: { [key: string]: string },
   prefix = '',
   DB: Storage = localStorage,
 ): void {

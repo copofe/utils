@@ -1,13 +1,15 @@
-// 两数之间的随机数
+/**
+ * 两数之间的随机数
+ */
 export function getRandomArbitrary(min: number, max: number): number {
   return Math.random() * (max - min) + min;
 }
 
-// 两数之间的随机整数
+/**
+ * 两数之间的随机整数，不含最大值，含最小值
+ */
 export function getRandomInt(min: number, max: number): number {
-  /* eslint-disable no-param-reassign */
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  /* eslint-enable no-param-reassign */
-  return Math.floor(Math.random() * (max - min)) + min; // 不含最大值，含最小值
+  const $min = Math.ceil(min);
+  const $max = Math.floor(max);
+  return Math.floor(Math.random() * ($max - $min)) + $min;
 }
