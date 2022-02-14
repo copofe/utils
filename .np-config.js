@@ -1,6 +1,5 @@
 module.exports = {
 	yarn: false,
-  test: false,
+  tests: false,
   cleanup: false,
-	contents: 'dist'
 };
