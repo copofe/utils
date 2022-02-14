@@ -1,22 +1,20 @@
-export function proxyStorage(
-  keys: { [key: string]: unknown },
+const getFullKey = (key: string, prefix: string) => (prefix ? `${prefix}/${key}` : key);
+
+export function proxyStorage<T extends Record<string, unknown>>(
+  keys: T,
   prefix = '',
   DB: Storage = localStorage,
-): void {
-  Object.keys(keys).forEach((key) => {
-    const k: string = prefix ? `${prefix}/${key}` : key;
-    Object.defineProperty(keys, key, {
-      set(value: unknown): void {
-        if (value === null) {
-          DB.removeItem(k);
-        } else {
-          DB.setItem(k, JSON.stringify(value));
-        }
-      },
-      get(): unknown {
-        const value = DB.getItem(k);
-        return value ? JSON.parse(value) : null;
-      },
-    });
+): T {
+  return new Proxy(keys, {
+    get(target: T, key: string) {
+      const fullKey = getFullKey(key, prefix);
+      const value = DB.getItem(fullKey);
+      return value ? JSON.parse(value) : null;
+    },
+    set(target: T, key: string, value: unknown) {
+      const fullKey = getFullKey(key, prefix);
+      DB.setItem(fullKey, JSON.stringify(value));
+      return true;
+    },
   });
 }

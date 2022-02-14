@@ -6,7 +6,10 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts"
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "release": "np",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -17,8 +20,10 @@
   "devDependencies": {
     "@copofe/eslint-config-typescript": "^0.1.7",
     "eslint": "^8.5.0",
+    "np": "^7.6.0",
     "tsup": "^5.11.9",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "vitest": "^0.3.4"
   },
   "files": [
     "dist"
